@@ -1,11 +1,7 @@
 <template>
     <div>
-          <modal v-if="showModal" @close="showModal=false">
 
-            <youtube :video-id="videoId"></youtube>
-
-          </modal>
-                <v-layout row xs3>
+                <v-layout>
                     <v-flex xs4>
                         <v-card  id="fixed">
                             <v-toolbar color="indigo" dark>
@@ -44,9 +40,9 @@
                             </v-list>
                         </v-card>
                     </v-flex>
-                <v-flex xs9>
+                <!--<v-flex >-->
                     <div>
-                        <div class="table-responsive-sm">
+                        <div class="table-responsive-lg">
                             <table class="table">
                               <thead class="thead-dark">
                               <!--<tr>-->
@@ -57,49 +53,101 @@
                               <!--</tr>-->
                               </thead>
 
-                              <tbody>
+                              <h1>Linear Combination of columns</h1>
+                             <br>
+                                <div class="per-lesson">
+                                  <h2>Learn</h2>
                                   <ul style="list-style: none;">
-                                    <th>Linear Combination of columns</th>
                                     <td>
-                                      <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                      <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                      <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                      <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                      <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
+                                      <modal>
+                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                      </modal>
+                                      <modal>
+                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                      </modal>
+                                      <modal>
+                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                      </modal>
+                                      <modal>
+                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                      </modal>
+                                      <modal>
+                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                      </modal>
                                     </td>
+                                  </ul>
+                                </div>
+
+                                <div class="per-lesson">
+                                  <h2>Practice</h2>
+                                  <ul>
                                     <td>
-                                      <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                      <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                      <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                      <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                      <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
+                                      <modal>
+                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                      </modal>
+                                      <modal>
+                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                      </modal>
+                                      <modal>
+                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                      </modal>
+                                      <modal>
+                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                      </modal>
+                                      <modal>
+                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                      </modal>
                                     </td>
                                   </ul>
-                                  <ul style="list-style: none;">
-                                    <th scope="row">Linear Combination of columns</th>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                  </ul>
-                                  <ul style="list-style: none;">
-                                    <th scope="row">Linear Combination of columns</th>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                  </ul>
-                                  <ul style="list-style: none;">
-                                    <th scope="row">Linear Combination of columns</th>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                    <li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>
-                                  </ul>
-                              </tbody>
+                                </div>
+
+                              <h1>Linear Combination of columns</h1>
+                              <br>
+                              <div class="per-lesson">
+                                <h2>Learn</h2>
+                                <ul style="list-style: none;">
+                                  <td>
+                                    <modal>
+                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                    </modal>
+                                    <modal>
+                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                    </modal>
+                                    <modal>
+                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                    </modal>
+                                    <modal>
+                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                    </modal>
+                                    <modal>
+                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                    </modal>
+                                  </td>
+                                </ul>
+                              </div>
+
+                              <div class="per-lesson">
+                                <h2>Practice</h2>
+                                <ul>
+                                  <td>
+                                    <modal>
+                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                    </modal>
+                                    <modal>
+                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                    </modal>
+                                    <modal>
+                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                    </modal>
+                                    <modal>
+                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                    </modal>
+                                    <modal>
+                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                    </modal>
+                                  </td>
+                                </ul>
+                              </div>
                             </table>
                         </div>
 
@@ -169,7 +217,7 @@
                             <!--</table>-->
                         <!--</div>-->
                     </div>
-                </v-flex>
+                <!--</v-flex>-->
             </v-layout>
     </div>
 </template>
@@ -194,7 +242,6 @@
           { title: 'matrix inversion and rules3', },
           { title: 'matrix inversion and rules4', }
         ],
-        showModal : false,
         url: null,
         videoId : null,
         startTime : null,
@@ -202,8 +249,7 @@
     },
 
     async mounted (){
-         await this.method('https://www.youtube.com/watch?v=pZ4hseG4d4s&t=2091s'),
-      console.log(this.showModal)
+         await this.method('https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab')
     },
 
     methods : {
@@ -239,15 +285,14 @@
         /*text-decoration: none;*/
         /*color: black;*/
     /*}*/
-    .heights {
-      max-height: 200px;
-      overflow: auto;
-    }
-    .scroll {
-      overflow-y: auto;
-    }
+
     #fixed {
       position:   fixed;
 
+    }
+    .per-lesson {
+      display:inline-block;
+      float:left;
+      margin: 70px;
     }
 </style>

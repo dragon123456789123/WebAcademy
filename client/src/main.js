@@ -11,14 +11,14 @@ import store from '@/store/store'
 // import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap-vue/dist/bootstrap-vue.css'
 //import './../node_modules/bulma/css/bulma.css';
-import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
+// import Buefy from 'buefy'
+// import 'buefy/dist/buefy.css'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 
 
 Vue.use(VueYouTubeEmbed)
 
-Vue.use(Buefy)
+// Vue.use(Buefy)
 // Vue.use(BootstrapVue);
 Vue.use(Vuetify);
 

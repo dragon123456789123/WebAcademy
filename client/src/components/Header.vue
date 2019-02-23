@@ -1,4 +1,59 @@
 <template>
+  <!--<div class="hero-head">-->
+    <!--<nav class="navbar">-->
+      <!--<div class="container">-->
+        <!--<div class="navbar-brand">-->
+          <!--<router-link to="" class="navbar-item">-->
+            <!--&lt;!&ndash;<img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">&ndash;&gt;-->
+            <!--WebAcademy-->
+          <!--</router-link>-->
+          <!--<span class="navbar-burger burger" data-target="navbarMenuHeroB">-->
+            <!--<span></span>-->
+            <!--<span></span>-->
+            <!--<span></span>-->
+          <!--</span>-->
+        <!--</div>-->
+        <!--<div id="navbarMenuHeroB" class="navbar-menu">-->
+          <!--<div class="navbar-end">-->
+            <!--<router-link to="" class="navbar-item is-active">-->
+              <!--Home-->
+            <!--</router-link>-->
+            <!--<router-link to="" class="navbar-item">-->
+              <!--si-->
+            <!--</router-link>-->
+            <!--<router-link to="" class="navbar-item">-->
+              <!--Documentation-->
+            <!--</router-link>-->
+            <!--<span class="navbar-item">-->
+              <!--<router-link to="" class="button is-info is-inverted">-->
+                <!--<span class="icon">-->
+                  <!--<i class="fab fa-github"></i>-->
+                <!--</span>-->
+                <!--<span>Download</span>-->
+              <!--</router-link>-->
+            <!--</span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</nav>-->
+  <!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <v-toolbar fixed class="cyan" dark>
     <v-toolbar-title class="mr-4">
       <v-btn @click="navigateTo({name: 'shops'})" flat dark>
