@@ -2,42 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1884b91a-69f8-436b-b73e-3dceeb932859" name="Default Changelist" comment="initial commit with app setup">
-      <change afterPath="$PROJECT_DIR$/client/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/.postcssrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/build.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/check-versions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/vue-loader.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/webpack.base.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/webpack.dev.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/webpack.prod.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/build/webpack.test.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/config/dev.env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/config/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/config/prod.env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/config/test.env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/HelloWorld.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Modal.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Panel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/test2.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/static/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/test/e2e/custom-assertions/elementCount.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/test/e2e/nightwatch.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/test/e2e/runner.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/test/e2e/specs/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/test/unit/.eslintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/test/unit/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/test/unit/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/test/unit/specs/HelloWorld.spec.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ShopsNearU-master/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ShopsNearU-master/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ShopsNearU-master/LICENSE" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ShopsNearU-master/client/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/../ShopsNearU-master/client/.babelrc" afterDir="false" />
@@ -55,20 +19,6 @@
       <change beforePath="$PROJECT_DIR$/../ShopsNearU-master/client/test/unit/jest.conf.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ShopsNearU-master/client/test/unit/setup.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ShopsNearU-master/client/test/unit/specs/HelloWorld.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ShopsNearU-master/client/test/unit/specs/HelloWorld.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Services/Api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Services/AuthenticationService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/test2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/test2.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/test3.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/test3.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,8 +127,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/test3.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="50" column="56" lean-forward="true" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
+            <state relative-caret-position="255">
+              <caret line="57" column="38" lean-forward="true" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
               <folding>
                 <element signature="e#11964#12002#0" expanded="true" />
               </folding>
@@ -352,7 +302,7 @@
       <workItem from="1550766544209" duration="229000" />
       <workItem from="1550772409367" duration="3635000" />
       <workItem from="1550861587475" duration="5183000" />
-      <workItem from="1550917427683" duration="17571000" />
+      <workItem from="1550917427683" duration="17877000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1550447035050</created>
@@ -375,11 +325,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550517822386</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="initial commit with app setup">
+      <created>1550947211631</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1550947211631</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67498000" />
+    <option name="totallyTimeSpent" value="67804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -392,9 +349,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27306548" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27306548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -407,7 +363,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18003273" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3747954" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -605,8 +561,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/test3.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="50" column="56" lean-forward="true" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
+        <state relative-caret-position="255">
+          <caret line="57" column="38" lean-forward="true" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
           <folding>
             <element signature="e#11964#12002#0" expanded="true" />
           </folding>

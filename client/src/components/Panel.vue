@@ -4,7 +4,18 @@
             <v-toolbar-title>{{title}}</v-toolbar-title>
             <slot name="action" />
         </v-toolbar>
-
+        <section class="hero is-medium is-primary is-bold">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">
+                WebAcademy
+              </h1>
+              <h2 class="subtitle">
+                An Online Educational Platform
+              </h2>
+            </div>
+          </div>
+        </section>
         <div class="pl-4 pr-4 pt-2 pb-2">
             <slot>
                 wait for processing shops by distance

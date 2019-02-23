@@ -4,12 +4,22 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import { sync } from 'vuex-router-sync'
-import BootstrapVue from 'bootstrap-vue'
+// import BootstrapVue from 'bootstrap-vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import store from '@/store/store'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
+//import './../node_modules/bulma/css/bulma.css';
+import Buefy from 'buefy'
+import 'buefy/dist/buefy.css'
+import VueYouTubeEmbed from 'vue-youtube-embed'
 
-Vue.use(BootstrapVue);
+
+Vue.use(VueYouTubeEmbed)
+
+Vue.use(Buefy)
+// Vue.use(BootstrapVue);
 Vue.use(Vuetify);
 
 Vue.config.productionTip = false
@@ -23,5 +33,6 @@ new Vue({
   router,
   store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  showModal: false
 })

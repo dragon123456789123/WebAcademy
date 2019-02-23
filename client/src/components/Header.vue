@@ -2,7 +2,7 @@
   <v-toolbar fixed class="cyan" dark>
     <v-toolbar-title class="mr-4">
       <v-btn @click="navigateTo({name: 'shops'})" flat dark>
-        ShopsNearU
+        WebAcademy
       </v-btn>
     </v-toolbar-title>
 
@@ -25,7 +25,7 @@
       </v-btn>
 
       <v-btn v-if="!$store.state.isUserLoggedIn"
-             @click="navigateTo({name: 'register'})"
+             @click="navigateTo({name: 'card'})"
              flat
              dark>
          Sign Up
@@ -36,13 +36,6 @@
              flat
              dark>
         Log Out
-      </v-btn>
-
-      <v-btn v-if="$store.state.isUserLoggedIn"
-             @click="navigateTo({name:'my-shops'})"
-             flat
-             dark>
-        WebAcademy
       </v-btn>
 
     </v-toolbar-items>
