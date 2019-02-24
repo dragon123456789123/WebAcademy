@@ -1,7 +1,7 @@
 <template>
     <v-layout row wrap align-center>
         <v-flex xs6 offset-xs3>
-            <panel title="Log In">
+          <v-container>
                 <form
                         name="tab-tracker-form"
                         autocomplete="off">
@@ -29,8 +29,8 @@
                 <br>
                 <div></div>
                 <br>
-                <p>Don't have an account? <v-btn dark @click="navigateTo({name:'register'})">Sign up instead!</v-btn></p>
-            </panel>
+            <p>Don't have an account?</p> <v-btn dark @click="navigateTo({name:'register'})">Sign up instead!</v-btn>
+          </v-container>
         </v-flex>
     </v-layout>
 </template>

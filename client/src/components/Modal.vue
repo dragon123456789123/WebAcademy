@@ -18,6 +18,11 @@
             </v-toolbar-items>
           </v-toolbar>
             <slot name="content"></slot>
+
+          <slot name="answer"></slot>
+
+            <slot name="submission"></slot>
+                <v-btn>Submit</v-btn>
           <!--<v-list three-line subheader>-->
             <!--<v-subheader>User Controls</v-subheader>-->
             <!--<v-list-tile avatar>-->

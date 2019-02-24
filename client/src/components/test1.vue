@@ -2,35 +2,116 @@
     <div>
         <panel>
             <!--<table class="table">-->
-          <v-container grid-list-md text-xs-center>
-            <v-layout row wrap>
-              <v-flex class="types">
-                <!--v-for="i in 4" :key="`3${i}`"-->
-                <v-card dark color="secondary">
-                  <v-card-text class="px-0">3</v-card-text>
-                  <!--<v-card-text class="px-0">3</v-card-text>-->
-                  <!--<v-card-text class="px-0">3</v-card-text>-->
-                  <!--<v-card-text class="px-0">3</v-card-text>-->
-                  <!--<v-card-text class="px-0">3</v-card-text>-->
-                </v-card>
+          <v-container >
+            <!--grid-list-md text-xs-center-->
+            <v-layout>
+              <v-flex>
+                <h1>Math</h1>
+
               </v-flex>
-              <v-flex class="types">
-                <!--v-for="i in 4" :key="`3${i}`"-->
-                <v-card dark color="secondary">
-                  <v-card-text class="px-0">3</v-card-text>
-                </v-card>
+              <v-flex>
+                <ul>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                </ul>
               </v-flex>
-              <v-flex class="types">
-                <!--v-for="i in 4" :key="`3${i}`"-->
-                <v-card dark color="secondary">
-                  <v-card-text class="px-0">3</v-card-text>
-                </v-card>
+              <v-flex>
+                <ul>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                </ul>
               </v-flex>
-              <v-flex class="types">
-                <!--v-for="i in 4" :key="`3${i}`"-->
-                <v-card dark color="secondary">
-                  <v-card-text class="px-0">3</v-card-text>
-                </v-card>
+              <v-flex>
+                <ul>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                </ul>
+              </v-flex>
+            </v-layout>
+          </v-container>
+          <v-container>
+            <v-layout>
+              <v-flex>
+                <h1>Math</h1>
+
+              </v-flex>
+              <v-flex>
+                <ul>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                </ul>
+              </v-flex>
+              <v-flex>
+                <ul>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                </ul>
+              </v-flex>
+              <v-flex>
+                <ul>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                  <li>
+                    <router-link to="test2">Linear Algebra</router-link>
+                  </li>
+                </ul>
               </v-flex>
             </v-layout>
           </v-container>
@@ -234,5 +315,9 @@
       display:inline-block;
       float:left;
       margin: 10px;
+    }
+
+    ul {
+      list-style-type: none;
     }
 </style>

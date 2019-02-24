@@ -43,15 +43,15 @@
                 <!--<v-flex >-->
                     <div>
                         <div class="table-responsive-lg">
-                            <table class="table">
-                              <thead class="thead-dark">
+                            <!--<table class="table">-->
+                              <!--<thead class="thead-dark">-->
                               <!--<tr>-->
                                 <!--<th scope="col">#</th>-->
                                 <!--<th scope="col">First</th>-->
                                 <!--<th scope="col">Last</th>-->
                                 <!--<th scope="col">Handle</th>-->
                               <!--</tr>-->
-                              </thead>
+                              <!--</thead>-->
 
                               <h1>Linear Combination of columns</h1>
                              <br>
@@ -83,7 +83,57 @@
                                   <ul>
                                     <td>
                                       <modal>
-                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                                        <template slot="header">linear Algebra</template>
+                                        <template slot="content">
+                                          <v-container>
+                                          <img
+                                            src="@/assets/ex1.png"
+                                          />
+                                          </v-container>
+                                        </template>
+                                       <template slot="answer">
+                                        <v-container>
+                                         <v-flex xs6>
+                                           <v-textarea
+                                             color="teal"
+                                           >
+                                             <!--v-model="form.bio"-->
+                                             <div slot="label">
+                                               Your Answer
+                                             </div>
+                                           </v-textarea>
+                                         </v-flex>
+                                        </v-container>
+                                       </template>
+                                        <template slot="submission">
+                                        <v-content>
+                                          <v-container fluid>
+                                            <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
+                                              <img :src="imageUrl" height="150" v-if="imageUrl"/>
+                                              <v-text-field label="Select Image" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
+                                              <input
+                                                type="file"
+                                                style="display: none"
+                                                ref="image"
+                                                accept="image/*"
+                                                @change="onFilePicked"
+                                              >
+                                            </v-flex>
+                                            <v-dialog v-model="dialog" max-width="290">
+                                              <v-card>
+                                                <v-card-title class="headline">Hello World!</v-card-title>
+                                                <v-card-text>Image Upload Script in VUE JS
+                                                  <hr>Yubaraj Shrestha
+                                                  <br>http://yubarajshrestha.com.np/</v-card-text>
+                                                <v-card-actions>
+                                                  <v-spacer></v-spacer>
+                                                  <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Close</v-btn>
+                                                </v-card-actions>
+                                              </v-card>
+                                            </v-dialog>
+                                          </v-container>
+                                        </v-content>
+                                      </template>
                                       </modal>
                                       <modal>
                                         <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
@@ -148,7 +198,7 @@
                                   </td>
                                 </ul>
                               </div>
-                            </table>
+                            <!--</table>-->
                         </div>
 
                         <!--<div class="table-responsive-md">-->
@@ -245,6 +295,10 @@
         url: null,
         videoId : null,
         startTime : null,
+        dialog: false,
+        imageName: '',
+        imageUrl: '',
+        imageFile: ''
       }
     },
 
@@ -256,6 +310,29 @@
       method (url) {
         this.videoId = getIdFromURL(url)
         this.startTime = getTimeFromURL(url)
+      },
+      pickFile () {
+        this.$refs.image.click ()
+      },
+
+      onFilePicked (e) {
+        const files = e.target.files
+        if(files[0] !== undefined) {
+          this.imageName = files[0].name
+          if(this.imageName.lastIndexOf('.') <= 0) {
+            return
+          }
+          const fr = new FileReader ()
+          fr.readAsDataURL(files[0])
+          fr.addEventListener('load', () => {
+            this.imageUrl = fr.result
+            this.imageFile = files[0] // this is an image file that can be sent to server...
+          })
+        } else {
+          this.imageName = ''
+          this.imageFile = ''
+          this.imageUrl = ''
+        }
       }
     },
 

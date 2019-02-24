@@ -80,7 +80,7 @@
       </v-btn>
 
       <v-btn v-if="!$store.state.isUserLoggedIn"
-             @click="navigateTo({name: 'card'})"
+             @click="navigateTo({name: 'register'})"
              flat
              dark>
          Sign Up

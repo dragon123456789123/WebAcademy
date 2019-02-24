@@ -14,7 +14,9 @@ import store from '@/store/store'
 // import Buefy from 'buefy'
 // import 'buefy/dist/buefy.css'
 import VueYouTubeEmbed from 'vue-youtube-embed'
+import VeeValidate from 'vee-validate'
 
+Vue.use(VeeValidate)
 
 Vue.use(VueYouTubeEmbed)
 

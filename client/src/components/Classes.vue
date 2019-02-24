@@ -17,8 +17,8 @@
                                         <div class="caption">
                                             <h3>{{ classe.name }}</h3>
                                             <div class="clearfix">
-                                                <!--<div class="price pull-left">City: {{ shop.city }}</div>-->
-                                                <!--<div class="price pull-left">Distance: {{ shop.distance }} Km</div>-->
+                                                <div class="price pull-left">City: {{ shop.city }}</div>
+                                                <div class="price pull-left">Distance: {{ shop.distance }} Km</div>
                                                 <v-btn class="btn btn-danger pull-right" >Remove</v-btn>
                                             </div>
                                         </div>
