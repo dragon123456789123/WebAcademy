@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import test1 from '@/components/test1'
-import test2 from '@/components/test2'
-import test3 from '@/components/test3'
+import Landing from '@/components/Landing'
+import Units from '@/components/Units'
+import Lessons from '@/components/Lessons'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Main from '@/components/Main'
@@ -16,23 +16,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'landing',
+      component: Landing
     },
     {
-      path: '/test2',
-      name: 'test2',
-      component: test2
+      path: '/units',
+      name: 'units',
+      component: Units
     },
     {
-      path: '/test',
-      name: 'test',
-      component: test1
-    },
-    {
-      path: '/test3',
-      name: 'test3',
-      component: test3
+      path: '/lessons',
+      name: 'lessons',
+      component: Lessons
     },
     {
       path: '/login',

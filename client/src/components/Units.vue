@@ -3,7 +3,7 @@
         <panel>
             <template>
                 <v-container fluid grid-list-sm>
-                    <v-btn @click="navigateTo({name:'test'})">Back to Math</v-btn>
+                    <v-btn @click="navigateTo({name:'landing'})">Back to Math</v-btn>
                     <v-layout>
 
                         <v-flex xs6 sm4>
@@ -11,7 +11,7 @@
                                     src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
                                     gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
                             ></v-img>
-                            <router-link to="test3"><h2>matrix multiplication</h2></router-link>
+                            <router-link to="lessons"><h2>matrix multiplication</h2></router-link>
                         </v-flex>
 
                         <v-flex xs6 sm4>
@@ -39,61 +39,7 @@
 
   export default {
     data: () => ({
-      //     rowsPerPageItems: [4, 8, 12],
-      //     pagination: {
-      //       rowsPerPage: 4
-      //     },
-      //     items: [
-      //       {
-      //         name: 'Math',
-      //         classes: [
-      //           {name: 'linear algebra'},
-      //           {name: 'calculus'},
-      //           {name: 'trigonometry'},
-      //           {name: 'geometry 5'},
-      //           {name: 'linear'},
-      //           {name: 'calculus 3'},
-      //           {name: 'trigonometry 2'},
-      //           ],
-      //
-      //       },
-      //       {
-      //         name: 'Science',
-      //         classes: [
-      //           {name: 'linear algebra'},
-      //           {name: 'calculus'},
-      //           {name: 'trigonometry'},
-      //           {name: 'geometry 5'},
-      //           {name: 'linear'},
-      //           {name: 'calculus 3'},
-      //           {name: 'trigonometry 2'},
-      //         ],
-      //       },
-      //       {
-      //         name: 'Physics',
-      //         classes: [
-      //           {name: 'linear algebra'},
-      //           {name: 'calculus'},
-      //           {name: 'trigonometry'},
-      //           {name: 'geometry 5'},
-      //           {name: 'linear'},
-      //           {name: 'calculus 3'},
-      //           {name: 'trigonometry 2'},
-      //         ],
-      //       },
-      //       {
-      //         name: 'Computer Science',
-      //         classes: [
-      //           {name: 'linear algebra'},
-      //           {name: 'calculus'},
-      //           {name: 'trigonometry'},
-      //           {name: 'geometry 5'},
-      //           {name: 'linear'},
-      //           {name: 'calculus 3'},
-      //           {name: 'trigonometry 2'},
-      //         ],
-      //       }
-      //     ]
+
     }),
 
     methods : {

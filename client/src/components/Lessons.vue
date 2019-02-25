@@ -25,34 +25,17 @@
                                         avatar
                                         @click=""
                                 >
-                                    <!--<v-list-tile-action>-->
-                                        <!--<v-icon v-if="item.icon" color="pink"></v-icon>-->
-                                    <!--</v-list-tile-action>-->
 
                                     <v-list-tile-content>
                                         <v-list-tile-title v-text="item.title"></v-list-tile-title>
                                     </v-list-tile-content>
-
-                                    <!--<v-list-tile-avatar>-->
-                                        <!--<img :src="item.avatar">-->
-                                    <!--</v-list-tile-avatar>-->
                                 </v-list-tile>
                             </v-list>
                         </v-card>
                     </v-flex>
-                <!--<v-flex >-->
                     <div>
                         <div class="table-responsive-lg">
-                            <!--<table class="table">-->
-                              <!--<thead class="thead-dark">-->
-                              <!--<tr>-->
-                                <!--<th scope="col">#</th>-->
-                                <!--<th scope="col">First</th>-->
-                                <!--<th scope="col">Last</th>-->
-                                <!--<th scope="col">Handle</th>-->
-                              <!--</tr>-->
-                              <!--</thead>-->
-
+                          <v-container>
                               <h1>Linear Combination of columns</h1>
                              <br>
                                 <div class="per-lesson">
@@ -97,9 +80,8 @@
                                            <v-textarea
                                              color="teal"
                                            >
-                                             <!--v-model="form.bio"-->
                                              <div slot="label">
-                                               Your Answer
+                                               Type Answer
                                              </div>
                                            </v-textarea>
                                          </v-flex>
@@ -107,10 +89,10 @@
                                        </template>
                                         <template slot="submission">
                                         <v-content>
-                                          <v-container fluid>
+                                          <v-container>
                                             <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
                                               <img :src="imageUrl" height="150" v-if="imageUrl"/>
-                                              <v-text-field label="Select Image" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
+                                              <v-text-field label="Upload Answer" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
                                               <input
                                                 type="file"
                                                 style="display: none"
@@ -120,16 +102,6 @@
                                               >
                                             </v-flex>
                                             <v-dialog v-model="dialog" max-width="290">
-                                              <v-card>
-                                                <v-card-title class="headline">Hello World!</v-card-title>
-                                                <v-card-text>Image Upload Script in VUE JS
-                                                  <hr>Yubaraj Shrestha
-                                                  <br>http://yubarajshrestha.com.np/</v-card-text>
-                                                <v-card-actions>
-                                                  <v-spacer></v-spacer>
-                                                  <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Close</v-btn>
-                                                </v-card-actions>
-                                              </v-card>
                                             </v-dialog>
                                           </v-container>
                                         </v-content>
@@ -150,6 +122,7 @@
                                     </td>
                                   </ul>
                                 </div>
+                          </v-container>
 
                               <h1>Linear Combination of columns</h1>
                               <br>
@@ -198,76 +171,8 @@
                                   </td>
                                 </ul>
                               </div>
-                            <!--</table>-->
                         </div>
-
-                        <!--<div class="table-responsive-md">-->
-                            <!--<table class="table">-->
-                              <!--<tr>-->
-                              <!--<th scope="row">Math</th>-->
-                              <!--<td>-->
-                                <!--<ul style="list-style: none;">-->
-                                  <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                <!--</ul>-->
-                              <!--</td>-->
-                            <!--</tr>-->
-                            <!--</table>-->
-                        <!--</div>-->
-
-                        <!--<div class="table-responsive-lg">-->
-                            <!--<table class="table">-->
-                              <!--<tr>-->
-                                <!--<th scope="row">Math</th>-->
-                                <!--<td>-->
-                                  <!--<ul style="list-style: none;">-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--</ul>-->
-                                <!--</td>-->
-                              <!--</tr>-->
-                            <!--</table>-->
-                        <!--</div>-->
-
-                        <!--<div class="table-responsive-xl">-->
-                            <!--<table class="table">-->
-                              <!--<tr>-->
-                                <!--<th scope="row">Math</th>-->
-                                <!--<td>-->
-                                  <!--<ul style="list-style: none;">-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                    <!--<li><v-btn @click="showModal = true"><router-link to=""><a href="">linear Algebra</a></router-link></v-btn></li>-->
-                                  <!--</ul>-->
-                                <!--</td>-->
-                              <!--</tr>-->
-                            <!--</table>-->
-                        <!--</div>-->
                     </div>
-                <!--</v-flex>-->
             </v-layout>
     </div>
 </template>
@@ -304,6 +209,7 @@
 
     async mounted (){
          await this.method('https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab')
+      console.log(this.startTime)
     },
 
     methods : {
