@@ -7,6 +7,7 @@ import Lessons from '@/components/Lessons'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Main from '@/components/Main'
+import Create from '@/components/Adders/AddClass'
 
 
 
@@ -43,6 +44,11 @@ export default new Router({
       path: '/main',
       name: 'main',
       component: Main
+    },
+    {
+      path: '/create',
+      name: 'create',
+      component: Create
     },
   ]
 })

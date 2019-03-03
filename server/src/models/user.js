@@ -1,9 +1,9 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt-nodejs');
-var async = require('async');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt-nodejs');
+const async = require('async');
 
-var userSchema = new Schema({
+const userSchema = new Schema({
     username:{
         type: String
     },
@@ -19,7 +19,7 @@ var userSchema = new Schema({
     return bcrypt.hashSync(password, bcrypt.genSaltSync(5), null);
 };*/
 
-var User = module.exports = mongoose.model('User', userSchema);
+const User = module.exports = mongoose.model('User', userSchema);
 
 //Get User by ID
 module.exports.getUserById = function(id, callback){
@@ -28,7 +28,7 @@ module.exports.getUserById = function(id, callback){
 
 //Get User by Username
 module.exports.getUserByUsername = function(username, callback){
-    var query = {username : username};
+    const query = {username : username};
     User.findOne(query, callback)
 }
 
@@ -46,7 +46,7 @@ module.exports.saveStudent = function(newUser, newStudent, callback){
         console.log('Student is being saved')
         async.parallel([newUser.save, newStudent.save], callback)
     });
-}
+};
 
 //Create Instructor
 module.exports.saveInstructor = function(newUser, newInstructor, callback){
@@ -57,7 +57,7 @@ module.exports.saveInstructor = function(newUser, newInstructor, callback){
         console.log('Instructor is being saved')
         async.parallel([newUser.save, newInstructor.save], callback)
     });
-}
+};
 
 
 

@@ -70,55 +70,6 @@
         <v-spacer></v-spacer>
         <v-btn dark @click="navigateTo({name:'login'})">Log in instead!</v-btn>
       </v-container>
-
-
-
-        <!--<panel title="Register">-->
-      <!--<v-container>-->
-            <!--<form-->
-                    <!--name="tab-tracker-form"-->
-                    <!--autocomplete="off">-->
-              <!--<v-select-->
-                <!--v-model="select"-->
-                <!--v-validate="'required'"-->
-                <!--:items="items1"-->
-                <!--:error-messages="errors.collect('select')"-->
-                <!--label="Account Type"-->
-                <!--data-vv-name="select"-->
-                <!--required-->
-              <!--&gt;</v-select>-->
-              <!--<v-text-field-->
-                      <!--label="Email"-->
-                      <!--v-model="email"-->
-              <!--&gt;</v-text-field>-->
-              <!--<br>-->
-              <!--<v-text-field-->
-                      <!--label="Password"-->
-                      <!--type="password"-->
-                      <!--v-model="password"-->
-                      <!--autocomplete="new-password"-->
-              <!--&gt;</v-text-field>-->
-              <!--<v-select-->
-                <!--v-model="select"-->
-                <!--v-validate="'required'"-->
-                <!--:items="items"-->
-                <!--:error-messages="errors.collect('select')"-->
-                <!--label="Educational Level"-->
-                <!--data-vv-name="select"-->
-                <!--required-->
-              <!--&gt;</v-select>-->
-            <!--</form>-->
-            <!--<br>-->
-            <!--<div class="danger-alert" v-html="error" />-->
-            <!--<br>-->
-            <!--<v-btn-->
-                    <!--dark-->
-                    <!--class="cyan"-->
-                    <!--@click="register">-->
-              <!--Register-->
-            <!--</v-btn>-->
-        <!--&lt;!&ndash;</panel>&ndash;&gt;-->
-      <!--</v-container>-->
     </v-flex>
   </v-layout>
 </template>

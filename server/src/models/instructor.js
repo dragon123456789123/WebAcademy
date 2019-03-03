@@ -1,8 +1,8 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt-nodejs');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt-nodejs');
 
-var instructorSchema = mongoose.Schema({
+const instructorSchema = mongoose.Schema({
     first_name:{
         type: String
     },
@@ -27,4 +27,4 @@ var instructorSchema = mongoose.Schema({
     }]
 });
 
-var Instructor = module.exports = mongoose.model('Instructor', instructorSchema)
+const Instructor = module.exports = mongoose.model('Instructor', instructorSchema)

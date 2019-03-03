@@ -1,179 +1,178 @@
 <template>
     <div>
+        <v-layout>
+            <v-flex xs4>
+                <v-card  id="fixed">
+                    <v-toolbar color="indigo" dark>
 
-                <v-layout>
-                    <v-flex xs4>
-                        <v-card  id="fixed">
-                            <v-toolbar color="indigo" dark>
+                        <v-toolbar-title>Lessons</v-toolbar-title>
 
-                                <v-toolbar-title>Lessons</v-toolbar-title>
+                        <v-spacer></v-spacer>
 
-                                <v-spacer></v-spacer>
+                        <v-btn icon>
+                            <v-icon></v-icon>
+                        </v-btn>
 
-                                <v-btn icon>
-                                    <v-icon></v-icon>
-                                </v-btn>
+                        <v-btn icon>
+                            <v-icon></v-icon>
+                        </v-btn>
+                    </v-toolbar>
+                    <v-list>
+                        <v-list-tile
+                                v-for="item in items"
+                                :key="item.title"
+                                avatar
+                                @click=""
+                        >
 
-                                <v-btn icon>
-                                    <v-icon></v-icon>
-                                </v-btn>
-                            </v-toolbar>
-                            <v-list>
-                                <v-list-tile
-                                        v-for="item in items"
-                                        :key="item.title"
-                                        avatar
-                                        @click=""
-                                >
-
-                                    <v-list-tile-content>
-                                        <v-list-tile-title v-text="item.title"></v-list-tile-title>
-                                    </v-list-tile-content>
-                                </v-list-tile>
-                            </v-list>
-                        </v-card>
-                    </v-flex>
-                    <div>
-                        <div class="table-responsive-lg">
-                          <v-container>
-                              <h1>Linear Combination of columns</h1>
-                             <br>
-                                <div class="per-lesson">
-                                  <h2>Learn</h2>
-                                  <ul style="list-style: none;">
-                                    <td>
-                                      <modal>
-                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                      </modal>
-                                      <modal>
-                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                      </modal>
-                                      <modal>
-                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                      </modal>
-                                      <modal>
-                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                      </modal>
-                                      <modal>
-                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                      </modal>
-                                    </td>
-                                  </ul>
-                                </div>
-
-                                <div class="per-lesson">
-                                  <h2>Practice</h2>
-                                  <ul>
-                                    <td>
-                                      <modal>
-                                        <template slot="header">linear Algebra</template>
-                                        <template slot="content">
-                                          <v-container>
-                                          <img
-                                            src="@/assets/ex1.png"
-                                          />
-                                          </v-container>
-                                        </template>
-                                       <template slot="answer">
-                                        <v-container>
-                                         <v-flex xs6>
-                                           <v-textarea
-                                             color="teal"
-                                           >
-                                             <div slot="label">
-                                               Type Answer
-                                             </div>
-                                           </v-textarea>
-                                         </v-flex>
-                                        </v-container>
-                                       </template>
-                                        <template slot="submission">
-                                        <v-content>
-                                          <v-container>
-                                            <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
-                                              <img :src="imageUrl" height="150" v-if="imageUrl"/>
-                                              <v-text-field label="Upload Answer" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
-                                              <input
-                                                type="file"
-                                                style="display: none"
-                                                ref="image"
-                                                accept="image/*"
-                                                @change="onFilePicked"
-                                              >
-                                            </v-flex>
-                                            <v-dialog v-model="dialog" max-width="290">
-                                            </v-dialog>
-                                          </v-container>
-                                        </v-content>
-                                      </template>
-                                      </modal>
-                                      <modal>
-                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                      </modal>
-                                      <modal>
-                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                      </modal>
-                                      <modal>
-                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                      </modal>
-                                      <modal>
-                                        <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                      </modal>
-                                    </td>
-                                  </ul>
-                                </div>
-                          </v-container>
-
-                              <h1>Linear Combination of columns</h1>
-                              <br>
-                              <div class="per-lesson">
-                                <h2>Learn</h2>
-                                <ul style="list-style: none;">
-                                  <td>
-                                    <modal>
-                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                    </modal>
-                                    <modal>
-                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                    </modal>
-                                    <modal>
-                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                    </modal>
-                                    <modal>
-                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                    </modal>
-                                    <modal>
-                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                    </modal>
-                                  </td>
-                                </ul>
-                              </div>
-
-                              <div class="per-lesson">
-                                <h2>Practice</h2>
-                                <ul>
-                                  <td>
-                                    <modal>
-                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                    </modal>
-                                    <modal>
-                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                    </modal>
-                                    <modal>
-                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                    </modal>
-                                    <modal>
-                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                    </modal>
-                                    <modal>
-                                      <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                                    </modal>
-                                  </td>
-                                </ul>
-                              </div>
+                            <v-list-tile-content>
+                                <v-list-tile-title v-text="item.title"></v-list-tile-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
+                    </v-list>
+                </v-card>
+            </v-flex>
+            <div>
+                <div class="table-responsive-lg">
+                  <v-container>
+                      <h1>Linear Combination of columns</h1>
+                     <br>
+                        <div class="per-lesson">
+                          <h2>Learn</h2>
+                          <ul style="list-style: none;">
+                            <td>
+                              <modal>
+                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                              </modal>
+                              <modal>
+                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                              </modal>
+                              <modal>
+                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                              </modal>
+                              <modal>
+                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                              </modal>
+                              <modal>
+                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                              </modal>
+                            </td>
+                          </ul>
                         </div>
-                    </div>
-            </v-layout>
+
+                        <div class="per-lesson">
+                          <h2>Practice</h2>
+                          <ul>
+                            <td>
+                              <modal>
+                                <template slot="header">linear Algebra</template>
+                                <template slot="content">
+                                  <v-container>
+                                  <img
+                                    src="@/assets/ex1.png"
+                                  />
+                                  </v-container>
+                                </template>
+                               <template slot="answer">
+                                <v-container>
+                                 <v-flex xs6>
+                                   <v-textarea
+                                     color="teal"
+                                   >
+                                     <div slot="label">
+                                       Type Answer
+                                     </div>
+                                   </v-textarea>
+                                 </v-flex>
+                                </v-container>
+                               </template>
+                                <template slot="submission">
+                                <v-content>
+                                  <v-container>
+                                    <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
+                                      <img :src="imageUrl" height="150" v-if="imageUrl"/>
+                                      <v-text-field label="Upload Answer" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
+                                      <input
+                                        type="file"
+                                        style="display: none"
+                                        ref="image"
+                                        accept="image/*"
+                                        @change="onFilePicked"
+                                      >
+                                    </v-flex>
+                                    <v-dialog v-model="dialog" max-width="290">
+                                    </v-dialog>
+                                  </v-container>
+                                </v-content>
+                              </template>
+                              </modal>
+                              <modal>
+                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                              </modal>
+                              <modal>
+                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                              </modal>
+                              <modal>
+                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                              </modal>
+                              <modal>
+                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                              </modal>
+                            </td>
+                          </ul>
+                        </div>
+                  </v-container>
+
+                      <h1>Linear Combination of columns</h1>
+                      <br>
+                      <div class="per-lesson">
+                        <h2>Learn</h2>
+                        <ul style="list-style: none;">
+                          <td>
+                            <modal>
+                              <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            </modal>
+                            <modal>
+                              <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            </modal>
+                            <modal>
+                              <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            </modal>
+                            <modal>
+                              <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            </modal>
+                            <modal>
+                              <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            </modal>
+                          </td>
+                        </ul>
+                      </div>
+
+                      <div class="per-lesson">
+                        <h2>Practice</h2>
+                        <ul>
+                          <td>
+                            <modal>
+                              <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            </modal>
+                            <modal>
+                              <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            </modal>
+                            <modal>
+                              <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            </modal>
+                            <modal>
+                              <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            </modal>
+                            <modal>
+                              <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            </modal>
+                          </td>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+      </v-layout>
     </div>
 </template>
 
