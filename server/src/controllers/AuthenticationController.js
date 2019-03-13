@@ -1,5 +1,8 @@
 //import models
 const User = require('../models/user');
+const Student = require('../models/student');
+const Instructor = require('../models/instructor');
+
 const jwt = require('jsonwebtoken');
 const config = require('../config/config')
 const bcrypt = require('bcrypt-nodejs');
@@ -20,9 +23,20 @@ function encryptPassword (password) {
 module.exports = {
   async register (req, res) {
     try {
+      await console.log('nnnnnnnnnnnnnnnnnnnn')
       req.body.password = encryptPassword(req.body.password)
+      console.log(req.body)
       const user = await User.create(req.body)
       const userJson = user.toJSON()
+      // console.log(userJson)
+      if(user.type=="Student"){
+        const student = await Student.create(req.body)
+        console.log('Student:'+ student)
+      }
+      if(user.type=="Instructor"){
+        const instructor = await Instructor.create(req.body)
+        console.log('Instructor: ' + instructor)
+      }
       res.send({
         user: userJson,
         token: jwtSignUser(user)

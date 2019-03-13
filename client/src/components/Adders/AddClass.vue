@@ -8,28 +8,23 @@
           </v-card-title>
           <v-card-text>
             <v-container>
-              <v-flex xs12 sm6 md4>
-                <v-text-field label="Class Title*" required></v-text-field>
+              <v-flex>
+                <v-text-field label="Class Title*" required v-model="title"></v-text-field>
               </v-flex>
-              <v-flex xs12 sm6 md4>
+              <v-flex>
                 <v-select
                   :items="['Math', 'Computer Science', 'Physics']"
                   label="Subject*"
                   required
+                  v-model="subject"
                 ></v-select>
               </v-flex>
-              <v-flex xs12 sm6 md4>
+              <v-flex>
                 <v-text-field label="Class Description" hint="example of helper text only on focus"></v-text-field>
               </v-flex>
-              <v-btn @click="showUnit=true; countUnits+=1">Add Unit</v-btn>
-
             </v-container>
-            {{countUnits}}
-            <v-container fluid v-for="countUnit in countUnits" :key="countUnit">
-              <add-unit v-show="showUnit" id="unit">
+            <v-btn @click="create" dark>Create Class</v-btn>
 
-              </add-unit>
-            </v-container>
           </v-card-text>
         </v-card>
       </v-container>
@@ -39,19 +34,64 @@
 
 <script>
   import AddUnit from '@/components/Adders/AddUnit'
+  import ClassesService from '@/Services/ClassesService'
 
 
   export default {
-    data () {
+    data() {
       return {
-          showUnit: false,
-        countUnits:0,
+        showUnit: false,
+        countUnits: 0,
+        title: '',
+        subject: '',
+        unittitle1:'',
+        unitdesc1: '',
+        lessontitle:'',
+        lparttitle:'',
+        lpartlink:'',
+        exparttitle:'',
+        expartlink:'',
       }
     },
-    components : {
-      AddUnit
+
+    mounted() {
+
+    },
+    methods: {
+      async create() {
+        try {
+          // console.log('ggggggggggggggg' + this.$store.state.unittitle)
+          //send user data to backend
+          const response = await ClassesService.create({
+            userId: this.$store.state.token,
+            instructor: this.$store.state.user.first_name,
+            title: this.title,
+            Subject: this.subject,
+            // units: this.unittitle1,
+            // desc: this.unitdesc1,
+            // lessons: this.lessontitle,
+            // parts_learn: this.lparttitle,
+            // parts_practice: this.exparttitle,
+            // last_name: this.lname,
+            // type: this.atype,
+            // education: this.education
+          });
+          console.log(response)
+
+        } catch (error) {
+          console.log(error)
+        }
+      },
+      handlu (unittile, unitdesc){
+        this.unittitle1 = unittile;
+        this.unitdesc1 = unitdesc;
+      },
+      // handle (){
+      //   this.handlu();
+      //   this.create();
+      // }
     }
-}
+  }
 </script>
 
 <style lang="scss">

@@ -11,13 +11,13 @@
               <v-container>
                 <v-flex>
                   <span class="headline">Learning Part</span>
-                  <v-text-field label="Part Title" required></v-text-field>
-                  <v-text-field label="Lesson Link" required></v-text-field>
+                  <v-text-field label="Part Title" required v-model="lparttitle"></v-text-field>
+                  <v-text-field label="Lesson Link" required v-model="lpartlink"></v-text-field>
                 </v-flex>
                 <v-flex>
                   <span class="headline">Practice Part</span>
-                  <v-text-field label="Part Title" required></v-text-field>
-                  <v-text-field label="Practice Link" hint="example of helper text only on focus"></v-text-field>
+                  <v-text-field label="Part Title" required v-model="exparttitle"></v-text-field>
+                  <v-text-field label="Practice Link" hint="example of helper text only on focus" v-model="expartlink"></v-text-field>
                   <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
                     <img :src="imageUrl" height="150" v-if="imageUrl"/>
                     <v-text-field label="Upload Answer" @click='pickFile' v-model='imageName' prepend-icon='attach_file'></v-text-field>
@@ -30,9 +30,8 @@
                     >
                   </v-flex>
                 </v-flex>
-                <v-btn>Add Part</v-btn>
+                <v-btn dark>Create Part</v-btn>
               </v-container>
-
             </v-card-text>
           </v-card>
         </v-container>
@@ -47,7 +46,11 @@
       return {
         imageName: '',
         imageUrl: '',
-        imageFile: ''
+        imageFile: '',
+        lparttitle:'',
+        lpartlink:'',
+        exparttitle:'',
+        expartlink:'',
       }
     },
     methods : {

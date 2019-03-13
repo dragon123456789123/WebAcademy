@@ -1,40 +1,51 @@
 <template>
     <v-layout>
         <v-flex>
-            <panel title="MyShops">
-                <div v-if="classes==null">
-                    <v-flex>
-                        <div>No Shops Liked</div>
-                    </v-flex>
+          <v-card>
+            <!--<v-card-title>-->
+              <!--<span class="headline"> Linear Algebra </span>-->
+              <!--<v-btn> add unit </v-btn>-->
+            <!--</v-card-title>-->
+            <div v-if="units===null">
+              <v-flex>
+                <div>No Content in this class</div>
+                <v-btn @click="navigateTo({name: 'addunit'})"> add unit </v-btn>
+              </v-flex>
+            </div>
+            <div v-else>
+              <v-container v-for="unit in units" :key="unit._id">
+                <v-card-title>
+                  <span class="headline"> {{unit.title}} </span>
+                  <v-btn @click="navigateTo({name: 'addlesson'}, unit)"> add lesson </v-btn>
+                  <v-btn @click="navigateTo({name: 'addunit'})"> add unit </v-btn>
+                </v-card-title>
+                <div v-if="unit.lessons===null">
+                  <v-flex>
+                    <span>No lessons in this unit</span>
+                    <v-btn @click="navigateTo({name: 'addlesson'}, unit)"> add lesson </v-btn>
+                  </v-flex>
                 </div>
                 <div v-else>
-                    <div v-for="classe in classes" :key="classe.name">
-                        <v-flex xs4 id="shop">
-                            <div class="row" id="shops">
-                                <div class="col-md-4 col-centered">
-                                    <div class="thumbnail">
-                                        <img :src="classe.name" alt="..." class="img-responsive">
-                                        <div class="caption">
-                                            <h3>{{ classe.name }}</h3>
-                                            <div class="clearfix">
-                                                <div class="price pull-left">City: {{ shop.city }}</div>
-                                                <div class="price pull-left">Distance: {{ shop.distance }} Km</div>
-                                                <v-btn class="btn btn-danger pull-right" >Remove</v-btn>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </v-flex>
-                    </div>
+                  <v-container v-for="lesson in unit.lessons" :key="lesson._id">
+                    <v-card-title>
+                      <span class="headline"> {{lesson.title}} </span>
+                      <v-btn @click="navigateTo({name: 'addparts'})"> Edit lesson </v-btn>
+                    </v-card-title>
+                  </v-container>
                 </div>
-            </panel>
+              </v-container>
+            </div>
+            <!--<v-container>-->
+            <!--<v-flex></v-flex>-->
+            <!--</v-container>-->
+          </v-card>
         </v-flex>
     </v-layout>
 </template>
 
 <script>
   import Panel from '@/components/Panel'
+  import UnitsService from '@/services/UnitsService'
 
   export default {
     components: {
@@ -42,26 +53,23 @@
     },
     data() {
       return {
-        classes: [
-          {
-            name: 'Calculus',
-            description: 'Introduction to calculus with exercises and lessons'
-          },
-          {
-            name: 'Computer Science',
-            description: 'Introduction to calculus with exercises and lessons'
-          },
-          {
-            name: 'Physics',
-            description: 'Introduction to calculus with exercises and lessons'
-          },
-          {
-            name: 'Chemistry',
-            description: 'Introduction to calculus with exercises and lessons'
-          }
-        ],
+        units: null,
+        lessons: null,
         key: null
       }
+    },
+
+    async mounted (){
+      this.units = (await UnitsService.index({classId: this.$store.state.class._id})).data
+      console.log(this.units[1].lessons)
+      // this.lessons = (await LessonsService.index({units: this.units})).data
+    },
+    methods: {
+      navigateTo(route, unit) {
+        this.$router.push(route)
+        this.$store.dispatch('setUnit', unit)
+        console.log(this.$store.state.unit)
+      },
     }
   }
 </script>

@@ -56,13 +56,13 @@
 
   <v-toolbar fixed class="cyan" dark>
     <v-toolbar-title class="mr-4">
-      <v-btn @click="navigateTo({name: 'shops'})" flat dark>
+      <v-btn @click="navigateTo({name: 'landing'})" flat dark>
         WebAcademy
       </v-btn>
     </v-toolbar-title>
 
     <v-toolbar-items>
-      <v-btn @click="navigateTo({name: 'shops'})"
+      <v-btn @click="navigateTo({name: 'landing'})"
              flat
              dark>
         Browse
@@ -86,6 +86,14 @@
          Sign Up
       </v-btn>
 
+      <!--v-show="isStudent"-->
+      <v-btn v-if="$store.state.isUserLoggedIn"  v-model="isStudent"
+             @click="goTo()"
+             flat
+             dark>
+        MyClasses
+      </v-btn>
+
       <v-btn v-if="$store.state.isUserLoggedIn"
              @click="logout()"
              flat
@@ -99,6 +107,30 @@
 
 <script>
   export default {
+    data () {
+      return {
+        type:'',
+        isStudent:false,
+        isTeacher:false,
+      }
+    },
+    mounted(){
+      {
+        if (this.$store.state.isUserLoggedIn) {
+          if (this.$store.state.user.type == 'Student') {
+            this.isStudent = true
+          }
+          if (this.$store.state.user.type == 'Instructor') {
+            this.isTeacher = true
+          }
+        } else {
+          this.isStudent = false
+          this.isTeacher = false
+        }
+      }
+      console.log(this.isStudent)
+    },
+
     methods: {
       navigateTo(route) {
         this.$router.push(route)
@@ -108,9 +140,23 @@
         this.store = await this.$store.dispatch('setUser', null)
         this.store = await this.$store.dispatch('setToken', null)
         //redirect to main page
+        this.isStudent = false
+        this.isTeacher = false
         await this.$router.push({
-          name: 'shops'
+          name: 'landing'
         })
+      },
+      async goTo() {
+        if (this.$store.state.user.type == 'Student') {
+          await this.$router.push({
+            name: 'sclasses'
+          })
+        }
+        if (this.$store.state.user.type == 'Instructor') {
+          await this.$router.push({
+            name: 'iclasses'
+          })
+        }
       }
     }
   }

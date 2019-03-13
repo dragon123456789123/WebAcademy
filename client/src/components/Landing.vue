@@ -3,7 +3,7 @@
         <panel>
             <!--<table class="table">-->
           <v-container fluid>
-            <v-btn fab dark color="indigo">
+            <v-btn v-show="$store.state.user.type == 'Instructor'" @click="navigateTo({name: 'create'})" fab dark color="indigo">
               <v-icon dark>add</v-icon>
             </v-btn>
             <v-container fluid class="white" >
@@ -148,6 +148,9 @@
       },
     },
     methods: {
+      navigateTo(route) {
+        this.$router.push(route)
+      },
       swapComponent: function (component) {
         this.currentComponent = component;
       }

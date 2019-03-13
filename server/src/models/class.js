@@ -17,6 +17,10 @@ const classSchema = new Schema({
             ref: "Unit"
         }
     ],
+    Subject:
+        {
+            type: String,
+        }
     //
     // units:[{
     //     unit_number: {type:Number},

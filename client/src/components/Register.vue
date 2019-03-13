@@ -12,10 +12,11 @@
               :items="['Student', 'Instructor']"
               label="Account Type*"
               required
+              v-model="atype"
             ></v-select>
             <v-layout wrap>
               <v-flex xs12 sm6 md4>
-                <v-text-field label="Legal first name*" required></v-text-field>
+                <v-text-field label="Legal first name*" required v-model="fname"></v-text-field>
               </v-flex>
               <v-flex xs12 sm6 md4>
                 <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
@@ -26,19 +27,21 @@
                   hint="example of persistent helper text"
                   persistent-hint
                   required
+                  v-model="lname"
                 ></v-text-field>
               </v-flex>
               <v-flex xs12>
-                <v-text-field label="Email*" required></v-text-field>
+                <v-text-field label="Email*" required v-model="email"></v-text-field>
               </v-flex>
               <v-flex xs12>
-                <v-text-field label="Password*" type="password" required></v-text-field>
+                <v-text-field label="Password*" type="password" required v-model="password"></v-text-field>
               </v-flex>
               <v-flex xs12 sm6>
                 <v-select
                   :items="['0-17', '18-29', '30-54', '54+']"
                   label="Age*"
                   required
+                  v-model="age"
                 ></v-select>
               </v-flex>
               <v-flex xs12 sm6>
@@ -46,6 +49,7 @@
                   :items="['Primary', 'Secondary', 'High School', 'College']"
                   label="Level of Education"
                   multiple
+                  v-model="education"
                 ></v-autocomplete>
               </v-flex>
             </v-layout>
@@ -75,19 +79,24 @@
 </template>
 
 <script>
-  // import AuthenticationService from '@/services/AuthenticationService'
+  import AuthenticationService from '@/services/AuthenticationService'
   import Panel from '@/components/Panel'
 
   export default {
 
-    $_veeValidate: {
-      validator: 'new'
-    },
+    // $_veeValidate: {
+    //   validator: 'new'
+    // },
 
     data () {
       return {
         email: '',
         password: '',
+        fname:'',
+        lname:'',
+        age:'',
+        atype:'',
+        education:'',
         error: null,
         items: [
           'Primary School',
@@ -100,28 +109,28 @@
           'Student',
         ],
         checkbox: null,
-        dictionary: {
-          attributes: {
-            email: 'E-mail Address'
-            // custom attributes
-          },
-          custom: {
-            name: {
-              required: () => 'Name can not be empty',
-              max: 'The name field may not be greater than 10 characters'
-              // custom messages
-            },
-            select: {
-              required: 'Select field is required'
-            }
-          }
-        }
+        // dictionary: {
+        //   attributes: {
+        //     email: 'E-mail Address'
+        //     // custom attributes
+        //   },
+        //   custom: {
+        //     name: {
+        //       required: () => 'Name can not be empty',
+        //       max: 'The name field may not be greater than 10 characters'
+        //       // custom messages
+        //     },
+        //     select: {
+        //       required: 'Select field is required'
+        //     }
+        //   }
+        // }
       }
     },
 
     mounted ()
       {
-      this.$validator.localize('en', this.dictionary)
+      //this.$validator.localize('en', this.dictionary)
     },
 
     methods: {
@@ -135,30 +144,35 @@
           //send user data to backend
           const response = await AuthenticationService.register({
             email: this.email,
-            password: this.password
+            password: this.password,
+            first_name: this.fname,
+            last_name: this.lname,
+            type: this.atype,
+            education: this.education
           })
+          console.log(response)
           //set user state
           this.$store.dispatch('setToken', response.data.token)
           this.$store.dispatch('setUser', response.data.user)
           //redirect to main component
           this.$router.push({
-            name: 'shops'
+            name: 'landing'
           })
         } catch (error) {
           this.error = error.response.data.error
         }
       },
 
-      submit () {
-        this.$validator.validateAll()
-      },
-      clear () {
-        this.name = ''
-        this.email = ''
-        this.select = null
-        this.checkbox = null
-        this.$validator.reset()
-      }
+      // submit () {
+      //   this.$validator.validateAll()
+      // },
+      // clear () {
+      //   this.name = '',
+      //   this.email = '',
+      //   this.select = null,
+      //   this.checkbox = null,
+      //   this.$validator.reset()
+      // }
     },
     //including panel component
     components:{

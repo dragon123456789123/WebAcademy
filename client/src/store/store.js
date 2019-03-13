@@ -13,7 +13,12 @@ export default new Vuex.Store({
   state: {
     token: null,
     user: null,
-    isUserLoggedIn: false
+    // type: null,
+    isUserLoggedIn: false,
+    class: null,
+    unit: null,
+    // isStudent: false,
+    // isTeacher: false
   },
   mutations: {
     setToken(state, token) {
@@ -22,6 +27,12 @@ export default new Vuex.Store({
     },
     setUser (state, user) {
       state.user = user
+    },
+    setClass(state, classe){
+      state.class = classe
+    },
+    setUnit(state, unit){
+      state.unit = unit
     }
   },
   actions: {
@@ -30,6 +41,12 @@ export default new Vuex.Store({
     },
     setUser ({commit}, user) {
       commit('setUser', user)
-    }
+    },
+    setClass({commit}, classe) {
+      commit('setClass', classe)
+    },
+    setUnit({commit}, unit) {
+      commit('setUnit', unit)
+    },
   }
 })

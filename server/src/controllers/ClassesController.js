@@ -1,12 +1,52 @@
 //import models
 // var Shop = require('../models/shop');
 var User = require('../models/user')
-var jwt = require('jsonwebtoken')
+const Student = require('../models/student');
+const Instructor = require('../models/instructor');
+var Class = require('../models/class')
+const jwt = require('jsonwebtoken')
 const config = require('../config/config')
 const moment = require('moment')
 
 //controllers
 module.exports = {
+
+  //create classes feature
+  async create(req, res) {
+    try {
+      console.log(req.body)
+      var user = jwt.verify(req.body.userId, config.authentication.jwtSecret)
+      console.log(user)
+      const classe = await Class.create(req.body)
+      console.log(classe._id)
+      const instructor = await Instructor.findOne({
+        last_name: user.last_name
+      })
+      var updatedInstructor = await Instructor.update(
+          {_id: instructor._id},
+          {$push: {classes: classe._id}}
+      )
+      res.send(updatedInstructor)
+      const classetoJson = classe.toJSON()
+      res.send({
+        classe: classetoJson,
+        // token: jwtSignUser(user)
+      })
+
+      // var t = userShops.shops.indexOf(shopId);
+      // if (t == -1) {
+      //   var updatedUser = await User.update(
+      //       {_id: user._id},
+      //       {$push: {shops: shopId}}
+      //   )
+      // }
+      // res.send(updatedUser)     //inform frontend of update
+    } catch (err) {
+      res.status(500).send({
+        error: 'an error has occurred trying to like shops'
+      })
+    }
+  },
 
   //render shops
   async index(req, res) {
@@ -53,26 +93,6 @@ module.exports = {
     }
   },
 
-  //like shops feature
-  async like(req, res) {
-    try {
-      var shopId = req.body.shopId;
-      var user = jwt.verify(req.body.userId, config.authentication.jwtSecret)
-      var userShops = await User.findById({_id: user._id}, 'shops')
-      var t = userShops.shops.indexOf(shopId);
-      if (t == -1) {
-        var updatedUser = await User.update(
-          {_id: user._id},
-          {$push: {shops: shopId}}
-        )
-      }
-      res.send(updatedUser)     //inform frontend of update
-    } catch (err) {
-      res.status(500).send({
-        error: 'an error has occurred trying to like shops'
-      })
-    }
-  },
 
   //dislike shops feature
   async dislike(req, res) {

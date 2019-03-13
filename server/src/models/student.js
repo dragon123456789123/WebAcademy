@@ -20,6 +20,9 @@ const studentSchema = mongoose.Schema({
     email: {
         type: String,
     },
+    education:{
+        type: String,
+    },
     classes: [{
         class_id: {type: [mongoose.Schema.Types.ObjectId]},
         class_title: {type: String}

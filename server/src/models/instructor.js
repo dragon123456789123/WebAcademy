@@ -21,10 +21,13 @@ const instructorSchema = mongoose.Schema({
     email: {
         type: String,
     },
-    classes: [{
-        class_id: {type: [mongoose.Schema.Types.ObjectId]},
-        class_title: {type: String}
-    }]
+    classes: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Class"
+        }
+    ],
+
 });
 
 const Instructor = module.exports = mongoose.model('Instructor', instructorSchema)

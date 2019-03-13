@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/shopdb',
+mongoose.connect('mongodb://localhost:27017/webacdb',
   {
     keepAlive: true,
     reconnectTries: Number.MAX_VALUE,
