@@ -37,6 +37,7 @@
 
 <script>
   import Panel from '@/components/Panel'
+  import AuthenticationService from '@/Services/AuthenticationService'
 
   export default {
     data () {
@@ -58,13 +59,13 @@
           const response = await AuthenticationService.login({
             email: this.email,
             password: this.password
-          })
+          });
           //set user data after login
           this.$store.dispatch('setToken', response.data.token)
           this.$store.dispatch('setUser', response.data.user)
           //redirect to main page
           this.$router.push({
-            name: 'shops'
+            name: 'landing'
           })
         } catch (error) {
           this.error = error.response.data.error

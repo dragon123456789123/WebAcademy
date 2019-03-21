@@ -54,18 +54,19 @@ module.exports = {
       const user = await User.findOne({
           email: email
       });
+      console.log(user)
       if (!user) {
         return res.status(403).send({
           error: 'The login information was incorrect'
         })
       }
 
-      const isPasswordValid = await user.validPassword(password)
-      if (!isPasswordValid) {
-        return res.status(403).send({
-          error: 'The login information was incorrect'
-        })
-      }
+      // const isPasswordValid = await user.validPassword(password)
+      // if (!isPasswordValid) {
+      //   return res.status(403).send({
+      //     error: 'The login information was incorrect'
+      //   })
+      // }
       res.send({
         user: user,
         token: jwtSignUser(user)

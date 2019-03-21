@@ -11,18 +11,20 @@ const lessonSchema = new Schema({
     number:{
         type: Number,
     },
-    parts: [
+    parts_learn: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Part"
+            part_link: {type:Number},
+            part_title: {type: String},
+            part_body: {type: String}
         }
     ],
-    // p_parts: [
-    //     {
-    //         type: mongoose.Schema.Types.ObjectId,
-    //         ref: "part-practice"
-    //     }
-    // ],
+    parts_practice: [
+        {
+            part_: {type:Number},
+            part_title: {type: String},
+            part_body: {type: String}
+        }
+    ],
     // units:[{
     //     unit_number: {type:Number},
     //     unit_title: {type: String},
@@ -32,10 +34,3 @@ const lessonSchema = new Schema({
 
 const Lesson = module.exports = mongoose.model('Lesson', lessonSchema)
 
-module.exports.getLessons = function(callback, limit){
-    Lesson.find(callback).limit(limit);
-}
-
-module.exports.getLessonById = function(id, callback){
-    Lesson.findById(id, callback)
-}

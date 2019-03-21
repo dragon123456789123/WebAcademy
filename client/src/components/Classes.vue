@@ -29,7 +29,7 @@
                   <v-container v-for="lesson in unit.lessons" :key="lesson._id">
                     <v-card-title>
                       <span class="headline"> {{lesson.title}} </span>
-                      <v-btn @click="navigateTo({name: 'addparts'})"> Edit lesson </v-btn>
+                      <v-btn @click="navigateTo({name: 'addparts'}, lesson)"> Edit lesson </v-btn>
                     </v-card-title>
                   </v-container>
                 </div>
@@ -61,14 +61,20 @@
 
     async mounted (){
       this.units = (await UnitsService.index({classId: this.$store.state.class._id})).data
-      console.log(this.units[1].lessons)
+      await console.log(this.$store.state.class._id)
       // this.lessons = (await LessonsService.index({units: this.units})).data
     },
     methods: {
       navigateTo(route, unit) {
         this.$router.push(route)
-        this.$store.dispatch('setUnit', unit)
-        console.log(this.$store.state.unit)
+
+        if(this.units.includes(unit)){
+          this.$store.dispatch('setUnit', unit)
+          console.log(this.$store.state.unit)
+        }else{
+          this.$store.dispatch('setLesson', unit)
+          console.log(this.$store.state.lesson)
+        }
       },
     }
   }

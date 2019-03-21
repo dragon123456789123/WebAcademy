@@ -30,7 +30,7 @@
                     >
                   </v-flex>
                 </v-flex>
-                <v-btn dark>Create Part</v-btn>
+                <v-btn dark @click="create">Create Part</v-btn>
               </v-container>
             </v-card-text>
           </v-card>
@@ -41,6 +41,8 @@
 </template>
 
 <script>
+  import PartsService from '@/Services/PartsService'
+
   export default {
     data () {
       return {
@@ -53,7 +55,33 @@
         expartlink:'',
       }
     },
+
+
     methods : {
+      async create() {
+        try {
+          // console.log('ggggggggggggggg' + this.$store.state.unittitle)
+          //send user data to backend
+          const response = await PartsService.create({
+            lessonId: this.$store.state.lesson._id,
+            l_title: this.lparttitle,
+            l_link: this.lpartlink,
+            p_title: this.exparttitle,
+            p_link: this .expartlink,
+            // units: this.unittitle1,
+            // desc: this.unitdesc1,
+            // lessons: this.lessontitle,
+            // parts_learn: this.lparttitle,
+            // parts_practice: this.exparttitle,
+            // last_name: this.lname,
+            // type: this.atype,
+            // education: this.education
+          });
+          console.log(response)
+        } catch (error) {
+          console.log(error)
+        }
+      },
       pickFile () {
         this.$refs.image.click ()
       },

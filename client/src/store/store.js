@@ -17,6 +17,7 @@ export default new Vuex.Store({
     isUserLoggedIn: false,
     class: null,
     unit: null,
+    lesson: null,
     // isStudent: false,
     // isTeacher: false
   },
@@ -33,6 +34,9 @@ export default new Vuex.Store({
     },
     setUnit(state, unit){
       state.unit = unit
+    },
+    setLesson(state, lesson){
+      state.lesson = lesson
     }
   },
   actions: {
@@ -47,6 +51,9 @@ export default new Vuex.Store({
     },
     setUnit({commit}, unit) {
       commit('setUnit', unit)
+    },
+    setLesson({commit}, lesson) {
+      commit('setLesson', lesson)
     },
   }
 })

@@ -7,7 +7,8 @@ const UserController = require('./controllers/UserController');
 const ClassesController = require('./controllers/ClassesController');
 const InstructorController = require('./controllers/InstructorController');
 const UnitsController = require('./controllers/UnitsController');
-const LessonsController = require('./controllers/LessonsController')
+const LessonsController = require('./controllers/LessonsController');
+const PartsController = require('./controllers/PartsController')
 
 
 
@@ -31,6 +32,8 @@ module.exports = (app) => {
           UnitsController.index),
   app.post('/create-lesson',
           LessonsController.create),
+      app.post('/create-part',
+          PartsController.create),
 
   app.post('/dislike-shops',
       ShopsController.dislike)
