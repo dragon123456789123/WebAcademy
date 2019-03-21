@@ -16,6 +16,10 @@ const partSchema = new Schema({
     },
     p_ex_path:{
         type: String,
+        answer: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer"
+        },
     }
 
     // units:[{

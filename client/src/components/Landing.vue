@@ -9,120 +9,136 @@
             <v-container fluid class="white" >
               <!--grid-list-md text-xs-center-->
               <v-layout>
-                <v-btn fab dark color="teal">
-                  <v-icon dark>list</v-icon>
-                </v-btn>
-                <v-flex>
-                  <h1>Math</h1>
+                <v-flex  v-for="subject in subjects" :key="subject._id">
+                  <v-btn fab dark color="teal">
+                    <v-icon dark>list</v-icon>
+                  </v-btn>
+                  <v-flex>
+                    <h1>{{subject.title}}</h1>
 
+                  </v-flex>
+                  <v-flex>
+                    <ul>
+                      <li v-for=" classe in subject.classes" :key="classe._id">
+                        <a @click="navigateTo({name: 'units'}, classe)">{{classe.title}}</a>
+                      </li>
+                    </ul>
+                  </v-flex>
                 </v-flex>
-                <v-flex>
-                  <ul>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                  </ul>
-                </v-flex>
-                <v-flex>
-                  <ul>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                  </ul>
-                </v-flex>
-                <v-flex>
-                  <ul>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                  </ul>
-                </v-flex>
-              </v-layout>
-            </v-container>
-            <v-container fluid class="white">
-              <v-layout>
-                <v-btn fab dark color="teal">
-                  <v-icon dark>list</v-icon>
-                </v-btn>
-                <v-flex>
-                  <h1>Math</h1>
+                <!--<v-btn fab dark color="teal">-->
+                  <!--<v-icon dark>list</v-icon>-->
+                <!--</v-btn>-->
+                <!--<v-flex>-->
+                  <!--<h1>Math</h1>-->
 
-                </v-flex>
-                <v-flex>
-                  <ul>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                  </ul>
-                </v-flex>
-                <v-flex>
-                  <ul>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                  </ul>
-                </v-flex>
-                <v-flex>
-                  <ul>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                    <li>
-                      <router-link to="units">Linear Algebra</router-link>
-                    </li>
-                  </ul>
-                </v-flex>
+                <!--</v-flex>-->
+                <!--<v-flex>-->
+                  <!--<ul>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</v-flex>-->
+                <!--<v-flex>-->
+                  <!--<ul>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</v-flex>-->
+                <!--<v-flex>-->
+                  <!--<ul>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</v-flex>-->
+              <!--</v-layout>-->
+            <!--</v-container>-->
+            <!--<v-container fluid class="white">-->
+              <!--<v-layout>-->
+                <!--<v-btn fab dark color="teal">-->
+                  <!--<v-icon dark>list</v-icon>-->
+                <!--</v-btn>-->
+                <!--<v-flex>-->
+                  <!--<h1>Math</h1>-->
+
+                <!--</v-flex>-->
+                <!--<v-flex>-->
+                  <!--<ul>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</v-flex>-->
+                <!--<v-flex>-->
+                  <!--<ul>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</v-flex>-->
+                <!--<v-flex>-->
+                  <!--<ul>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                      <!--<router-link to="units">Linear Algebra</router-link>-->
+                    <!--</li>-->
+                  <!--</ul>-->
+                <!--</v-flex>-->
               </v-layout>
             </v-container>
           </v-container>
@@ -132,24 +148,29 @@
 
 <script>
   import Panel from '@/components/Panel'
+  import SubjectsService from '@/services/SubjectsService'
 
   export default {
     data: () => ({
       currentComponent: null,
-      componentsArray: ['foo', 'bar']
-
+      componentsArray: ['foo', 'bar'],
+      subjects: null,
+      
 
     }),
 
+    async mounted () {
+        this.subjects = (await SubjectsService.index()).data
+      console.log(this.subjects)
+    },
+
     components: {
       Panel,
-      'foo': {
-        template: '<h1>Foo component</h1>'
-      },
     },
     methods: {
-      navigateTo(route) {
+      navigateTo(route, classe) {
         this.$router.push(route)
+        this.$store.dispatch('setClass', classe)
       },
       swapComponent: function (component) {
         this.currentComponent = component;

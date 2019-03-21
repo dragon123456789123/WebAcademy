@@ -1,11 +1,11 @@
 import Api from '@/services/Api'
 
 export default {
-  index (unit) {
-    return Api().post('class-lessons', unit)
+  index () {
+    return Api().post('subjects',)
   },
-  create (lesson) {
-    return Api().post('create-lesson', lesson)
+  create (subject) {
+    return Api().post('create-subject', subject)
   },
   dislike (shop) {
     return Api().post('dislike-shops', shop)

@@ -4,29 +4,17 @@
             <template>
                 <v-container fluid grid-list-sm>
                     <v-btn @click="navigateTo({name:'landing'})">Back to Math</v-btn>
-                    <v-layout>
+                    <v-layout >
 
-                        <v-flex xs6 sm4>
+                        <v-flex v-for="unit in units" :key="unit._id" xs6 sm4>
                             <v-img
                                     src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
                                     gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
                             ></v-img>
-                            <router-link to="lessons"><h2>matrix multiplication</h2></router-link>
+                            <a @click="navigateTo({name:'lessons'}, unit)"><h2>{{unit.title}}</h2></a>
                         </v-flex>
 
-                        <v-flex xs6 sm4>
-                            <v-img src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
-                                <div class="fill-height bottom-gradient"></div>
-                            </v-img>
-                            <h2>matrix addition</h2>
-                        </v-flex>
 
-                        <v-flex xs6 sm4>
-                            <v-img src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
-                                <div class="fill-height repeating-gradient"></div>
-                            </v-img>
-                            <h2>matrix subtraction</h2>
-                        </v-flex>
                     </v-layout>
                 </v-container>
             </template>
@@ -36,15 +24,24 @@
 
 <script>
   import Panel from '@/components/Panel'
+  import UnitsService from '@/services/UnitsService'
 
   export default {
     data: () => ({
+      units: null,
 
     }),
 
+    async mounted (){
+      this.units = (await UnitsService.index({classId: this.$store.state.class._id})).data
+      await console.log(this.$store.state.class._id)
+    },
+
     methods : {
-      navigateTo(route) {
+      navigateTo(route, unit) {
         this.$router.push(route)
+        this.$store.dispatch('setUnit', unit)
+        console.log(this.$store.state.unit)
       },
     },
 

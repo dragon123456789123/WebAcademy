@@ -6,6 +6,7 @@ const Instructor = require('../models/instructor');
 const Class = require('../models/class');
 const Lesson = require('../models/lesson');
 const Unit = require('../models/unit');
+const Part = require('../models/part');
 
 
 var jwt = require('jsonwebtoken')
@@ -42,13 +43,23 @@ module.exports = {
   },
   async index(req, res) {
     try {
-      var user = jwt.verify(req.body.userId, config.authentication.jwtSecret);
-      console.log(req.body)
-      var instructor = await Instructor.findOne({last_name: user.last_name});
-      console.log(instructor)
-      var classes = await Class.find({_id: {$in: instructor.classes}});
-      console.log(classes)
-      res.send(classes)
+      console.log('kkkkkkkkkkkkkkkkkk'+ req.body.unitId)
+      const unit = await Unit.findById({_id: req.body.unitId});
+      console.log(unit)
+      const lessons = await Lesson.find({_id: {$in: unit.lessons}});
+      console.log('ooooooooooooooooooooooooooooo'+ lessons)
+      for( let lesson of lessons){
+        lesson.parts = await Part.find({_id: {$in: lesson.parts}})
+      }
+      console.log('ooooooooooooooooooooooooooooo'+ lessons)
+      res.send(lessons)
+      // var user = jwt.verify(req.body.userId, config.authentication.jwtSecret);
+      // console.log(req.body)
+      // var instructor = await Instructor.findOne({last_name: user.last_name});
+      // console.log(instructor)
+      // var classes = await Class.find({_id: {$in: instructor.classes}});
+      // console.log(classes)
+      // res.send(classes)
     } catch (err) {
       res.status(500).send({
         error: 'an error has occurred trying to fetch the shops'

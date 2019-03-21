@@ -19,14 +19,14 @@
                     </v-toolbar>
                     <v-list>
                         <v-list-tile
-                                v-for="item in items"
-                                :key="item.title"
+                                v-for="lesson in lessons"
+                                :key="lesson._id"
                                 avatar
                                 @click=""
                         >
 
                             <v-list-tile-content>
-                                <v-list-tile-title v-text="item.title"></v-list-tile-title>
+                                <v-list-tile-title v-text="lesson.title"></v-list-tile-title>
                             </v-list-tile-content>
                         </v-list-tile>
                     </v-list>
@@ -34,28 +34,28 @@
             </v-flex>
             <div>
                 <div class="table-responsive-lg">
-                  <v-container>
-                      <h1>Linear Combination of columns</h1>
+                  <v-container v-for="lesson in lessons" :key="lesson._id">
+                      <h1>{{lesson.title}}</h1>
                      <br>
                         <div class="per-lesson">
                           <h2>Learn</h2>
                           <ul style="list-style: none;">
-                            <td>
+                            <td v-for="part in lesson.parts" :key="part._id">
                               <modal>
                                 <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
                               </modal>
-                              <modal>
-                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                              </modal>
-                              <modal>
-                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                              </modal>
-                              <modal>
-                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                              </modal>
-                              <modal>
-                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
-                              </modal>
+                              <!--<modal>-->
+                                <!--<template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>-->
+                              <!--</modal>-->
+                              <!--<modal>-->
+                                <!--<template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>-->
+                              <!--</modal>-->
+                              <!--<modal>-->
+                                <!--<template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>-->
+                              <!--</modal>-->
+                              <!--<modal>-->
+                                <!--<template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>-->
+                              <!--</modal>-->
                             </td>
                           </ul>
                         </div>
@@ -63,7 +63,7 @@
                         <div class="per-lesson">
                           <h2>Practice</h2>
                           <ul>
-                            <td>
+                            <td v-for="part in lesson.parts" :key="part._id">
                               <modal>
                                 <template slot="header">linear Algebra</template>
                                 <template slot="content">
@@ -181,32 +181,26 @@
   import Panel from '@/components/Panel'
   import Modal from '@/components/Modal'
   import { getIdFromURL, getTimeFromURL } from 'vue-youtube-embed'
-
+  import LessonsService from '@/services/LessonsService'
 
   export default {
     data () {
       return {
-        items: [
-          { icon: true, title: 'Linear Combinations and Spans',  },
-          { title: 'Linear dependence and independence',  },
-          { title: 'subspace and the basis for subspaces', },
-          { title: 'vector dot and cross product', },
-          { title: 'matrix inversion and rules1', },
-          { title: 'matrix inversion and rules2', },
-          { title: 'matrix inversion and rules3', },
-          { title: 'matrix inversion and rules4', }
-        ],
         url: null,
         videoId : null,
         startTime : null,
         dialog: false,
         imageName: '',
         imageUrl: '',
-        imageFile: ''
+        imageFile: '',
+        lessons:'',
       }
     },
 
     async mounted (){
+      this.lessons = (await LessonsService.index({unitId: this.$store.state.unit._id})).data
+      await console.log(this.$store.state.unit._id)
+      await console.log(this.lessons)
          await this.method('https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab')
       console.log(this.startTime)
     },

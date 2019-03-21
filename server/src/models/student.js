@@ -26,7 +26,12 @@ const studentSchema = mongoose.Schema({
     classes: [{
         class_id: {type: [mongoose.Schema.Types.ObjectId]},
         class_title: {type: String}
-    }]
+    }],
+    answers: [
+        {
+
+    }
+    ]
 });
 
 const Student = module.exports = mongoose.model('Student', studentSchema)

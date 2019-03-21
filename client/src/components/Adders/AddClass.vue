@@ -20,6 +20,9 @@
                 ></v-select>
               </v-flex>
               <v-flex>
+                <v-text-field label="Class Subject*" required v-model="subject"></v-text-field>
+              </v-flex>
+              <v-flex>
                 <v-text-field label="Class Description" hint="example of helper text only on focus"></v-text-field>
               </v-flex>
             </v-container>
@@ -44,6 +47,7 @@
         countUnits: 0,
         title: '',
         subject: '',
+        subject1: '',
         unittitle1:'',
         unitdesc1: '',
         lessontitle:'',
@@ -76,6 +80,7 @@
             // type: this.atype,
             // education: this.education
           });
+
           console.log(response)
 
         } catch (error) {

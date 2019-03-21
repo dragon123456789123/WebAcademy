@@ -8,7 +8,8 @@ const ClassesController = require('./controllers/ClassesController');
 const InstructorController = require('./controllers/InstructorController');
 const UnitsController = require('./controllers/UnitsController');
 const LessonsController = require('./controllers/LessonsController');
-const PartsController = require('./controllers/PartsController')
+const PartsController = require('./controllers/PartsController');
+const SubjectsController = require('./controllers/SubjectsController');
 
 
 
@@ -25,11 +26,15 @@ module.exports = (app) => {
       ShopsController.index),
   app.post('/create-class',
       ClassesController.create),
+      app.post('/create-subject',
+          SubjectsController.create),
 
   app.post('/create-unit',
       UnitsController.create),
       app.post('/class-units',
           UnitsController.index),
+      app.post('/class-lessons',
+          LessonsController.index),
   app.post('/create-lesson',
           LessonsController.create),
       app.post('/create-part',
@@ -41,6 +46,10 @@ module.exports = (app) => {
   app.post('/my-iclasses',
     //isLoggedIn,
     InstructorController.index),
+      app.post('/subjects',
+          //isLoggedIn,
+          SubjectsController.index),
+
   app.post('/remove-shops',
     UserController.remove)
 };
