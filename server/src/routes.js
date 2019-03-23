@@ -10,6 +10,8 @@ const UnitsController = require('./controllers/UnitsController');
 const LessonsController = require('./controllers/LessonsController');
 const PartsController = require('./controllers/PartsController');
 const SubjectsController = require('./controllers/SubjectsController');
+const LPartsController = require('./controllers/LPartsController');
+const PPartsController = require('./controllers/PPartsController');
 
 
 
@@ -39,6 +41,10 @@ module.exports = (app) => {
           LessonsController.create),
       app.post('/create-part',
           PartsController.create),
+      app.post('/create-l-part',
+          LPartsController.create)
+  app.post('/create-p-part',
+      PPartsController.create)
 
   app.post('/dislike-shops',
       ShopsController.dislike)

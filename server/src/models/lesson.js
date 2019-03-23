@@ -11,10 +11,16 @@ const lessonSchema = new Schema({
     number:{
         type: Number,
     },
-    parts: [
+    l_parts: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Part"
+            ref: "Learn"
+        }
+    ],
+    p_parts: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Practice"
         }
     ],
     // p_parts: [

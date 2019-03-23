@@ -42,6 +42,8 @@
 
 <script>
   import PartsService from '@/Services/PartsService'
+  import PPartsService from '@/Services/PPartsService'
+  import LPartsService from '@/Services/LPartsService'
 
   export default {
     data () {
@@ -62,12 +64,11 @@
         try {
           // console.log('ggggggggggggggg' + this.$store.state.unittitle)
           //send user data to backend
-          const response = await PartsService.create({
+          const response = await LPartsService.create({
             lessonId: this.$store.state.lesson._id,
-            l_title: this.lparttitle,
-            l_link: this.lpartlink,
-            p_title: this.exparttitle,
-            p_link: this .expartlink,
+            title: this.lparttitle,
+            link: this.lpartlink,
+
             // units: this.unittitle1,
             // desc: this.unitdesc1,
             // lessons: this.lessontitle,
@@ -77,7 +78,13 @@
             // type: this.atype,
             // education: this.education
           });
-          console.log(response)
+          const response1 = await PPartsService.create({
+            lessonId: this.$store.state.lesson._id,
+            title: this.exparttitle,
+            link: this.expartlink,
+          });
+            console.log(response)
+            console.log(response1)
         } catch (error) {
           console.log(error)
         }

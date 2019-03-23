@@ -5,21 +5,18 @@ const learnSchema = new Schema({
     title:{
         type: String,
     },
+    link:{
+        type: String,
+    },
     description:{
         type: String,
     },
     number:{
         type: Number,
     },
-    link:{
+    path:{
         type: String,
     },
-
-    // units:[{
-    //     unit_number: {type:Number},
-    //     unit_title: {type: String},
-    //     unit_body: {type: String}
-    // }]
 });
 
 const Learn = module.exports = mongoose.model('Learn', learnSchema)

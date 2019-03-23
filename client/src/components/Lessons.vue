@@ -40,9 +40,9 @@
                         <div class="per-lesson">
                           <h2>Learn</h2>
                           <ul style="list-style: none;">
-                            <td v-for="part in lesson.parts" :key="part._id">
-                              <modal>
-                                <template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>
+                            <td>
+                              <modal v-for="part in lesson.l_parts" :key="part._id">
+                                <template slot="header">{{part.title}}</template><template slot="content"><youtube :video-id="part.link"></youtube></template>
                               </modal>
                               <!--<modal>-->
                                 <!--<template slot="header">linear Algebra</template><template slot="content"><youtube :video-id="videoId"></youtube></template>-->
@@ -63,9 +63,9 @@
                         <div class="per-lesson">
                           <h2>Practice</h2>
                           <ul>
-                            <td v-for="part in lesson.parts" :key="part._id">
-                              <modal>
-                                <template slot="header">linear Algebra</template>
+                            <td >
+                              <modal v-for="part in lesson.p_parts" :key="part._id">
+                                <template slot="header">{{part.title}}</template>
                                 <template slot="content">
                                   <v-container>
                                   <img
@@ -194,14 +194,20 @@
         imageUrl: '',
         imageFile: '',
         lessons:'',
+        parts:'',
       }
     },
 
     async mounted (){
-      this.lessons = (await LessonsService.index({unitId: this.$store.state.unit._id})).data
-      await console.log(this.$store.state.unit._id)
-      await console.log(this.lessons)
-         await this.method('https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab')
+      this.lessons = (await LessonsService.index({unitId: this.$store.state.unit._id})).data;
+      for(let lesson of this.lessons) {
+        for (let part of lesson.l_parts) {
+          part.link = getIdFromURL(part.link)
+        }
+      }
+      await console.log(this.$store.state.unit._id);
+      await console.log(this.lessons);
+         await this.method('https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab');
       console.log(this.startTime)
     },
 

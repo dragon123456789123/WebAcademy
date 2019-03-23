@@ -8,8 +8,6 @@ const Lesson = require('../models/lesson');
 const Unit = require('../models/unit');
 const Part = require('../models/part');
 const Learn = require('../models/learn');
-const Practice = require('../models/practice');
-
 
 
 var jwt = require('jsonwebtoken')
@@ -22,18 +20,22 @@ module.exports = {
       console.log(req.body)
       // var user = jwt.verify(req.body.userId, config.authentication.jwtSecret)
       // console.log(user)
-      const lesson = await Lesson.create(req.body)
-      console.log(lesson)
-      const unit = await Unit.findById({
-        _id: req.body.unitId
-      })
-      var updatedUnit = await Unit.update(
-          {_id: unit._id},
-          {$push: {lessons: lesson._id}}
+      const part = await Learn.create(req.body)
+      console.log(part)
+      const lesson = await Lesson.findById({
+        _id: req.body.lessonId
+      });
+      var updatedLesson = await Lesson.update(
+          {_id: lesson._id},
+          {$push: {l_parts: part._id}}
       )
-      res.send(updatedUnit)
-      console.log(unit)
-      const unittoJson = unit.toJSON()
+      const lesson1 = await Lesson.findById({
+        _id: req.body.lessonId
+      })
+      res.send(updatedLesson)
+      console.log(updatedLesson)
+      console.log(lesson1)
+      const lessontoJson = lesson.toJSON()
       // res.send({
       //   classe: classetoJson,
       //   // token: jwtSignUser(user)
@@ -46,24 +48,13 @@ module.exports = {
   },
   async index(req, res) {
     try {
-      console.log('kkkkkkkkkkkkkkkkkk'+ req.body.unitId)
-      const unit = await Unit.findById({_id: req.body.unitId});
-      console.log(unit)
-      const lessons = await Lesson.find({_id: {$in: unit.lessons}});
-      console.log('ooooooooooooooooooooooooooooo'+ lessons)
-      for( let lesson of lessons){
-        lesson.l_parts = await Learn.find({_id: {$in: lesson.l_parts}});
-        lesson.p_parts = await Practice.find({_id: {$in: lesson.p_parts}});
-      }
-      console.log('ooooooooooooooooooooooooooooo'+ lessons)
-      res.send(lessons)
-      // var user = jwt.verify(req.body.userId, config.authentication.jwtSecret);
-      // console.log(req.body)
-      // var instructor = await Instructor.findOne({last_name: user.last_name});
-      // console.log(instructor)
-      // var classes = await Class.find({_id: {$in: instructor.classes}});
-      // console.log(classes)
-      // res.send(classes)
+      var user = jwt.verify(req.body.userId, config.authentication.jwtSecret);
+      console.log(req.body)
+      var instructor = await Instructor.findOne({last_name: user.last_name});
+      console.log(instructor)
+      var classes = await Class.find({_id: {$in: instructor.classes}});
+      console.log(classes)
+      res.send(classes)
     } catch (err) {
       res.status(500).send({
         error: 'an error has occurred trying to fetch the shops'
