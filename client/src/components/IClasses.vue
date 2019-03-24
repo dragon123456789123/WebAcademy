@@ -31,6 +31,7 @@
 
      async mounted (){
       this.classes = (await InstructorService.index({userId: this.$store.state.token})).data
+       console.log(this.classes)
     },
 
     methods: {

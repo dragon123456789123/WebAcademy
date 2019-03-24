@@ -11,6 +11,8 @@ import Create from '@/components/Adders/AddClass'
 import AddUnit from '@/components/Adders/AddUnit'
 import AddLesson from '@/components/Adders/AddLesson'
 import AddParts from '@/components/Adders/AddParts'
+import AddPart from '@/components/Adders/AddPart'
+
 
 import SClasses from '@/components/SClasses'
 import IClasses from '@/components/IClasses'
@@ -86,6 +88,11 @@ export default new Router({
       path: '/addparts',
       name: 'addparts',
       component: AddParts
+    },
+    {
+      path: '/addpart',
+      name: 'addpart',
+      component: AddPart
     },
   ]
 })

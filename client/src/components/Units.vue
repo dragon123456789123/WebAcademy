@@ -33,6 +33,7 @@
     }),
 
     async mounted (){
+      await console.log(this.$store.state.class._id)
       this.units = (await UnitsService.index({classId: this.$store.state.class._id})).data
       await console.log(this.$store.state.class._id)
     },

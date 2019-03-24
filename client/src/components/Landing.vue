@@ -3,9 +3,9 @@
         <panel>
             <!--<table class="table">-->
           <v-container fluid>
-            <v-btn v-show="$store.state.user.type == 'Instructor'" @click="navigateTo({name: 'create'})" fab dark color="indigo">
-              <v-icon dark>add</v-icon>
-            </v-btn>
+            <!--<v-btn v-show="$store.state.user.type == 'Instructor'" @click="navigateTo({name: 'create'})" fab dark color="indigo">-->
+              <!--<v-icon dark>add</v-icon>-->
+            <!--</v-btn>-->
             <v-container fluid class="white" >
               <!--grid-list-md text-xs-center-->
               <v-layout>
@@ -25,120 +25,7 @@
                     </ul>
                   </v-flex>
                 </v-flex>
-                <!--<v-btn fab dark color="teal">-->
-                  <!--<v-icon dark>list</v-icon>-->
-                <!--</v-btn>-->
-                <!--<v-flex>-->
-                  <!--<h1>Math</h1>-->
 
-                <!--</v-flex>-->
-                <!--<v-flex>-->
-                  <!--<ul>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                  <!--</ul>-->
-                <!--</v-flex>-->
-                <!--<v-flex>-->
-                  <!--<ul>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                  <!--</ul>-->
-                <!--</v-flex>-->
-                <!--<v-flex>-->
-                  <!--<ul>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                  <!--</ul>-->
-                <!--</v-flex>-->
-              <!--</v-layout>-->
-            <!--</v-container>-->
-            <!--<v-container fluid class="white">-->
-              <!--<v-layout>-->
-                <!--<v-btn fab dark color="teal">-->
-                  <!--<v-icon dark>list</v-icon>-->
-                <!--</v-btn>-->
-                <!--<v-flex>-->
-                  <!--<h1>Math</h1>-->
-
-                <!--</v-flex>-->
-                <!--<v-flex>-->
-                  <!--<ul>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                  <!--</ul>-->
-                <!--</v-flex>-->
-                <!--<v-flex>-->
-                  <!--<ul>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                  <!--</ul>-->
-                <!--</v-flex>-->
-                <!--<v-flex>-->
-                  <!--<ul>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                    <!--<li>-->
-                      <!--<router-link to="units">Linear Algebra</router-link>-->
-                    <!--</li>-->
-                  <!--</ul>-->
-                <!--</v-flex>-->
               </v-layout>
             </v-container>
           </v-container>
@@ -162,6 +49,7 @@
     async mounted () {
         this.subjects = (await SubjectsService.index()).data
       console.log(this.subjects)
+      console.log(this.$store.state.user)
     },
 
     components: {

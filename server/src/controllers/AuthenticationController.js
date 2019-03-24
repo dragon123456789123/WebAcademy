@@ -23,7 +23,9 @@ function encryptPassword (password) {
 module.exports = {
   async register (req, res) {
     try {
-      await console.log('nnnnnnnnnnnnnnnnnnnn')
+      await console.log('nnnnnnnnnnnnnnnnnnnn'),
+          console.log(req.body)
+      return
       req.body.password = encryptPassword(req.body.password)
       console.log(req.body)
       const user = await User.create(req.body)

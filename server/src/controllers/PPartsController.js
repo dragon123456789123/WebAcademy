@@ -8,6 +8,17 @@ const Lesson = require('../models/lesson');
 const Unit = require('../models/unit');
 const Part = require('../models/part');
 const Practice = require('../models/practice');
+// const multer = require('multer');
+// const storage = multer.diskStorage({
+//   destination: function(req, file, cb){
+//     cb(null, './uploads/');
+//   },
+//   filename: function(req, file, cb){
+//     cb(null, file.originalname)
+//   }
+// })
+//
+// const upload = multer({storage: storage});
 
 
 
@@ -19,6 +30,8 @@ module.exports = {
   async create(req, res) {
     try {
       console.log(req.body)
+      console.log(req.file)
+      return
       // var user = jwt.verify(req.body.userId, config.authentication.jwtSecret)
       // console.log(user)
       const part = await Practice.create(req.body)

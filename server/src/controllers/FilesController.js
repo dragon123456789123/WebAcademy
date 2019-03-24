@@ -7,7 +7,23 @@ const Class = require('../models/class');
 const Lesson = require('../models/lesson');
 const Unit = require('../models/unit');
 const Part = require('../models/part');
-const Learn = require('../models/learn');
+const Practice = require('../models/practice');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: function(req, file, cb){
+    cb(null, './uploads/');
+  },
+  filename: function(req, file, cb){
+    cb(null, new Date().toISOString()+ file.originalname)
+  }
+})
+
+const upload = multer({storage: storage});
+// const upload = require("express-fileupload")
+// app.use(upload())
+
+
 
 
 var jwt = require('jsonwebtoken')
@@ -17,30 +33,32 @@ const config = require('../config/config')
 module.exports = {
   async create(req, res) {
     try {
-      return
-      console.log(req.body)
-      // var user = jwt.verify(req.body.userId, config.authentication.jwtSecret)
-      // console.log(user)
-      const part = await Learn.create(req.body)
-      console.log(part)
-      const lesson = await Lesson.findById({
-        _id: req.body.lessonId
-      });
-      var updatedLesson = await Lesson.update(
-          {_id: lesson._id},
-          {$push: {l_parts: part._id}}
-      )
-      const lesson1 = await Lesson.findById({
-        _id: req.body.lessonId
-      })
-      res.send(updatedLesson)
-      console.log(updatedLesson)
-      console.log(lesson1)
-      const lessontoJson = lesson.toJSON()
-      // res.send({
-      //   classe: classetoJson,
-      //   // token: jwtSignUser(user)
+      console.log(req.file)
+      // console.log(req.name)
+      console.log('test')
+      // console.log(req.body)
+      // // var user = jwt.verify(req.body.userId, config.authentication.jwtSecret)
+      // // console.log(user)
+      // const part = await Practice.create(req.body)
+      // console.log(part)
+      // const lesson = await Lesson.findById({
+      //   _id: req.body.lessonId
+      // });
+      // var updatedLesson = await Lesson.update(
+      //     {_id: lesson._id},
+      //     {$push: {p_parts: part._id}}
+      // )
+      // const lesson1 = await Lesson.findById({
+      //   _id: req.body.lessonId
       // })
+      // res.send(updatedLesson)
+      // console.log(updatedLesson)
+      // console.log(lesson1)
+      // const lessontoJson = lesson.toJSON()
+      // // res.send({
+      // //   classe: classetoJson,
+      // //   // token: jwtSignUser(user)
+      // // })
     } catch (err) {
       res.status(500).send({
         error: 'an error has occurred trying to like shops'

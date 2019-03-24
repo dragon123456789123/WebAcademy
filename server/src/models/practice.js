@@ -11,6 +11,9 @@ const practiceSchema = new Schema({
     number:{
         type: Number,
     },
+    question:{
+        type: String,
+    },
     path:{
         type: String,
     },

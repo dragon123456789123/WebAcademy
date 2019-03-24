@@ -6,7 +6,9 @@ export default () => {
   return axios.create({
     baseURL: `http://localhost:8081/`,
     headers: {
-      Authorization:`${store.state.token}`
+      Authorization:`${store.state.token}`,
+      'Content-Type': 'multipart/form-data'
+
     }
   })
 }

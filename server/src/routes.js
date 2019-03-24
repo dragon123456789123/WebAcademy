@@ -12,7 +12,20 @@ const PartsController = require('./controllers/PartsController');
 const SubjectsController = require('./controllers/SubjectsController');
 const LPartsController = require('./controllers/LPartsController');
 const PPartsController = require('./controllers/PPartsController');
+const FilesController = require('./controllers/FilesController');
 
+// const multer = require('multer');
+//
+// const storage = multer.diskStorage({
+//   destination: function(req, file, cb){
+//     cb(null, './uploads/');
+//   },
+//   filename: function(req, file, cb){
+//     cb(null, file.originalname);
+//   }
+// })
+//
+// const upload = multer({storage: storage});
 
 
 
@@ -43,8 +56,12 @@ module.exports = (app) => {
           PartsController.create),
       app.post('/create-l-part',
           LPartsController.create)
+  // upload.single("file")
   app.post('/create-p-part',
-      PPartsController.create)
+      PPartsController.create),
+      // upload.single("file")
+  app.post('/select-files',FilesController.create),
+  // FilesController.create
 
   app.post('/dislike-shops',
       ShopsController.dislike)
